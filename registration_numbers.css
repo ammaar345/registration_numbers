@@ -1,24 +1,30 @@
 body{font-size: 150%;
-    background-color: lightblue;
+    background-color: rgb(173, 58, 58);
     font-family: 'Courier New', Courier, monospace;
     padding-left: 5em;
     padding-right: 5em;
-    padding-top: 2em}
+    padding-top: 2em;
+border:1px solid lightgrey
+  }
+   
 .right{padding-left: 6em;};
  input[type="button"]{
    font-weight: 200;
 }
-.more{padding-left: 13em;
-padding-top: 0.25em;}
+.more{padding-left: 12em;
+padding-top: 0.5em;}
 .btnAdd{ 
   float: right;
-  background-color: blueviolet;
-  border-radius: 1em;
+  background-color: green;
+  border-radius: 7px;
   padding: 4px;
   font-size: 16px;
+  width: 4.5em;
 }
 .flex{
    display: flex;
    zoom: 1;
 }
 .top{padding-top: 1em;}
+select{color: lightskyblue;
+background-color: black;}

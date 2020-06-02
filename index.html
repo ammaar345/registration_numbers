@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="registration_numbers.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +9,42 @@
 </head>
 <body>
 <h1>Registration Number List</h1>
-<div >
-<label>Registration Number:</label>
-
-
+<div class="container">
+<div class="right-top ">
+  <label for="right-top">Registration Number:</label>
+  <input type="text" name="regNumber" class="regNumber" >    
 </div>
-
-<div class="right top ">
-<input type="text" name="regNumber" class="regNumber" >    
-</div>
-<div class=" button flex more">
+<div class=" button flex more top">
     <input type="button" value=" Add " class="btnAdd">
 </div>
-<label for="cars">Town:</label>
-<select name="cars" id="cars">
-  <option value="volvo">Cape Town</option>
-  <option value="saab">Paarl</option>
-  <option value="opel">George</option>
-  <option value="audi">Stellenbosch</option>
+
+
+  
+    <div class="town-select top" >
+      <label for="town-select">Select Town:</label>
+      <select id="townSelect">
+        
+  <option value="1">Cape Town</option>
+  <option value="2">Paarl</option>
+  <option value="3">George</option>
+  <option value="4">Stellenbosch</option>
 </select>
+</div>
+
+  <div class="row">
+    <div class="col-3 List1" id="List1">
+
+</div>
+<div class="col-3 List2" id="List2">
+
+</div>
+<div class="col-3 List3" id="List3">
+
+</div>
+<div class="col-3 List4" id="List4">
+</div>
+</div>
+</div>
 </body>
 <script src="registration_numbers-factory.js" charset="utf-8"></script>
 <script src="registration_number.js" charset="utf-8"></script>
