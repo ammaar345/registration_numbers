@@ -12,14 +12,14 @@ var textVal=text.value;
       node.appendChild(textnode);
 
       if (textVal.startsWith("CAA")) {
-         document.getElementById("List").appendChild(node)
+         document.getElementById("List1").appendChild(node)
       }
 
       else if (textVal.startsWith("CJ")) {
          document.getElementById("List2").appendChild(node)
       }
 
-   }
+   
    else if (textVal.startsWith("CAG")) {
       document.getElementById("List3").appendChild(node)
    }
@@ -28,6 +28,6 @@ var textVal=text.value;
    }
    //console.log(textnode)
 }
-
+}
 
 button.addEventListener("click", append)
