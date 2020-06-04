@@ -11,15 +11,15 @@ const item1 = document.getElementById("List1");
 const town = document.getElementById("townSelect");
 const storedRegState = localStorage["Plates"];
 
-for (plateNo in plateFunc.plateStorage()){
-item1.innerHTML=plateFunc.objToString();
+for (plateNo in plateFunc.plateStorage()) {
+   item1.innerHTML = plateFunc.objToString();
 } //how to display in a list
 function append() {
    var textVal = text.value;
    var townVal = town.options[town.selectedIndex].value;
    var node = document.createElement("li");
    var textnode = document.createTextNode(textVal);
-  
+
    plateFunc.numRegister(textVal);
    if (textVal) {
 
@@ -45,8 +45,8 @@ function append() {
       // console.log(textnode);
       // console.log(textVal.length);
       var storingPlates = plateFunc.plateStorage();
-   var regPlates = JSON.stringify(storingPlates);
-   localStorage['Plates'] = regPlates;
+      var regPlates = JSON.stringify(storingPlates);
+      localStorage['Plates'] = regPlates;
 
    }
    // if(townVal=1){
@@ -60,7 +60,7 @@ function append() {
    // else if(townVal=4){
 
    // }
-  
+
 
 }
 

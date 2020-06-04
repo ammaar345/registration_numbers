@@ -17,7 +17,7 @@ function RegNumber(initialState) {
         //var plates= JSON.stringify(regNumbers);
         //console.log(plateFunc.numberPlates())      
         console.log(regNumbers)
-//how to add a title while adding the plate number
+        //how to add a title while adding the plate number
         return regNumbers;
 
     }
@@ -25,10 +25,10 @@ function RegNumber(initialState) {
         for (var i = 0; i < plateFunc.numberPlates(); i++) {
             var pl = Object.keys(regNumbers)[i];
             //var listPlate=regNumbers[i];
-            
+
 
         }
-       // console.log(pl)
+        // console.log(pl)
         return pl
     }
     // function allPaarl(){
