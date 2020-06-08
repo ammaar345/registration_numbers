@@ -35,7 +35,7 @@ function append() {
     var townVal = town.options[town.selectedIndex].value;
     // var textnode = document.createTextNode(textVal);
     plateFunc.addRegNumber(textVal);
-    plateFunc.filter(townVal, arrAll);
+    //plateFunc.filter(townVal, arrAll);
     //filtering();
     var storingPlates = plateFunc.plateStorage();
     var regPlates = JSON.stringify(storingPlates);
