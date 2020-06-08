@@ -27,4 +27,5 @@ padding-top: 0.5em;}
 }
 .top{padding-top: 1em;}
 select{color: lightskyblue;
-background-color: black;}
+background-color: black;
+width: fit-content;}
