@@ -50,4 +50,9 @@ select {
     border: 5px solid black;
     background-color: cornsilk;
     width: fit-content;
+    font-weight: 1000;
+}
+
+li {
+    padding-bottom: 5px;
 }
