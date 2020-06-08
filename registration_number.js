@@ -15,7 +15,7 @@ const town = document.getElementById("townSelect");
 //const storedRegState = localStorage["Plates"];
 
 
-
+function filtering(){
 
 const regNumList = document.querySelector(".regNumList");
 regNumList.innerHTML = "";
@@ -29,20 +29,19 @@ for (var i = 0; i < regNumbers.length; i++) {//array from main to go in for loop
  // 
 
 }
-
+}
 
 function append() {
    var textVal = text.value;
    var townVal = town.options[town.selectedIndex].value;
-  
   // var textnode = document.createTextNode(textVal);
-
-   plateFunc.addRegNumber(textVal);
+  plateFunc.addRegNumber(textVal);
    plateFunc.filter(townVal,arrAll)
-// console.log(town.value)
+   filtering();
+   // console.log(town.value)
 // if (town.value){
 // if (townVal="all"){
-
+   
 // }
 
 
