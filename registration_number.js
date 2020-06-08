@@ -19,7 +19,7 @@ regNumList.innerHTML = "";
 
 // function filtering() {
 
-// loop over a list of reg numbers
+//loop over a list of reg numbers
 
 for (var i = 0; i < regNumbers.length; i++) { //array from main to go in for loop
     const currentReg = regNumbers[i];
