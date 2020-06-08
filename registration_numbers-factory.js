@@ -31,7 +31,7 @@ function RegNumber(initialState) {
     //     }
     // }
     function plateStorage() {
-        console.log(regNumbers)
+        // console.log(regNumbers)
         return regNumbers;
 
     }
@@ -55,13 +55,13 @@ function RegNumber(initialState) {
             var currentReg = regNumbers[i]; //if no work make var = const
             if (currentReg.startsWith(location)) {
                 filteredList.push(currentReg);
-            }
-            else if (currentReg.startsWith("all")) {
+            } else if (currentReg.startsWith("all")) {
                 for (var i = 0; i < regNumbers.length; i++) {
-                  var regOfAll=regNumbers[i];
+                    var regOfAll = regNumbers[i];
                     arrAll.push(regOfAll);
                 }
-           return arrAll }
+                return arrAll
+            }
         }
         return filteredList;
     }
