@@ -27,22 +27,26 @@ function RegNumber(initialState) {
     //     }
     // }
 
-    function filter(location, arrAll) {
+    function filter(location) {
         // CL, CY or contains(obtained from dropdown menu)
         var filteredList = [];
         for (var i = 0; i < regNumbers.length; i++) {
             var currentReg = regNumbers[i]; //if no work make var = const
             if (currentReg.startsWith(location)) {
                 filteredList.push(currentReg);
-            } else {
-                for (var i = 0; i < regNumbers.length; i++) {
-                    var regOfAll = regNumbers[i];
-                    arrAll.push(regOfAll);
-                }
-                return arrAll
+            } else if (location === "all") {
+
+                filteredList.push(currentReg);
             }
+
+
+
+
+
         }
-        return filteredList;
+
+        return filteredList
+
     }
     return {
         addRegNumber,
