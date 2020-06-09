@@ -51,8 +51,9 @@ select {
     background-color: cornsilk;
     width: fit-content;
     font-weight: 1000;
+    margin:1em
 }
-
+ul{list-style-type: none}
 li {
     padding-bottom: 5px;
 }
