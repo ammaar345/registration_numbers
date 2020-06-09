@@ -1,14 +1,15 @@
 body {
     font-size: 150%;
-    background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(30,180,162,1) 35%, rgba(0,212,255,1) 100%);
+    background: rgb(37,181,164);
+    background: linear-gradient(90deg, rgba(37,181,164,1) 6%, rgba(2,0,36,1) 61%, rgba(0,212,255,1) 100%);
     font-family: 'Courier New', Courier, monospace;
     padding-left: 5em;
     padding-right: 5em;
     padding-top: 2em;
     border: 1px solid lightgrey
 }
-
+h1{font-weight: 800;}
+label{font-weight: 600;}
 .right {
     padding-left: 6em;
 }
