@@ -7,18 +7,19 @@ function RegNumber(initialState) {
         return regNumbers;
 
     }
-
     function addRegNumber(regNumber) {
-        //still need to filter out if its invalid **
-        if (!regNumbers.includes(regNumber) && regNumber !== "") {
-            if (regNumber.startsWith("CJ") && regNumber.length === 10 || regNumber.startsWith("CL") && regNumber.length === 10 || regNumber.startsWith("CY") && regNumber.length === 10) {
+        //still need to filter out if its invalid **  
+        if (regNumber !== "" && /C[YLJ] \d{3,5}/.test(regNumber)||/C[YLJ] \d+-\d+/) {
+if(!regNumbers.includes(regNumber)){
 
-                regNumbers.push(regNumber);
-                return true;
-            }
-            return false;
+            regNumbers.push(regNumber);
+            return true;
         }
+       }
+        return false;
+
     }
+
     // if (!regNumbers.includes(regNumber) && regNumber !== "") {
     //     if (regNumber.startsWith("CJ") && regNumber.length === 10 || regNumber.startsWith("CL") && regNumber.length === 10 || regNumber.startsWith("CY") && regNumber.length === 10) {
 
