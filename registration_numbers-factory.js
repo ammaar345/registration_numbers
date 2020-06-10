@@ -7,65 +7,82 @@ function RegNumber(initialState) {
         return regNumbers;
 
     }
-    function checkExists(reg,regArray){
-        if(/C[YLJ] \d{3,5}/.test(reg)||/C[YLJ] \d+-\d+/.test(reg)){
-            if(!regArray.includes(reg)){
+    function testfilter(location, registration) {
+        // CL, CY or contains
+        var filteredList = [];
+        for (var i = 0; i < registration.length; i++) {
+            const currentReg = registration[i];
+            if (currentReg.startsWith(location)) {
+                filteredList.push(currentReg);
+            }
+        }
+        return filteredList;
+    }
+    function checkExists(reg, regArray) {
+        if (/C[YLJ] \d{3,5}/.test(reg) || /C[YLJ] \d+-\d+/.test(reg)) {
+            if (!regArray.includes(reg)) {
+                return true
+            }
+        }
+        else { return false }
+    }
+    function checkValid(regist) {
+        if (/C[YLJ] \d{3,5}/.test(regist) || /C[YLJ] \d+-\d+/.test(regist)) {
             return true
         }
     }
-    else {return false}
-    }
-    function addRegNumber(regNumber) {
-        //still need to filter out if its invalid **  
-        if (regNumber !== "" && /C[YLJ] \d{3,5}/.test(regNumber)||/C[YLJ] \d+-\d+/.test(regNumber)) {
-if(!regNumbers.includes(regNumber)){
+        function addRegNumber(regNumber) {
+            //still need to filter out if its invalid **  
+            if (regNumber !== "" && /C[YLJ] \d{3,5}/.test(regNumber) || /C[YLJ] \d+-\d+/.test(regNumber)) {
+                if (!regNumbers.includes(regNumber)) {
 
-            regNumbers.push(regNumber);
-            return true;
+                    regNumbers.push(regNumber);
+                    return true;
+                }
+            }
+            return false;
+
         }
-       }
-        return false;
 
-    }
-
-    // if (!regNumbers.includes(regNumber) && regNumber !== "") {
-    //     if (regNumber.startsWith("CJ") && regNumber.length === 10 || regNumber.startsWith("CL") && regNumber.length === 10 || regNumber.startsWith("CY") && regNumber.length === 10) {
+        // if (!regNumbers.includes(regNumber) && regNumber !== "") {
+        //     if (regNumber.startsWith("CJ") && regNumber.length === 10 || regNumber.startsWith("CL") && regNumber.length === 10 || regNumber.startsWith("CY") && regNumber.length === 10) {
 
 
-    //         regNumbers.push(regNumber);
-    //     }
-    // }
+        //         regNumbers.push(regNumber);
+        //     }
+        // }
 
-    function filter(location) {
-        // CL, CY or contains(obtained from dropdown menu)
-        var filteredList = [];
-        for (var i = 0; i < regNumbers.length; i++) {
-            var currentReg = regNumbers[i]; //if no work make var = const
-            if(town.value){
-          if  (currentReg.startsWith(location)) {
-                filteredList.push(currentReg);
-            } else if (location === "all") {
+        function filter(location) {
+            // CL, CY or contains(obtained from dropdown menu)
+            var filteredList = [];
+            for (var i = 0; i < regNumbers.length; i++) {
+                var currentReg = regNumbers[i]; //if no work make var = const
+                if (town.value) {
+                    if (currentReg.startsWith(location)) {
+                        filteredList.push(currentReg);
+                    } else if (location === "all") {
 
-                filteredList.push(currentReg);
+                        filteredList.push(currentReg);
+                    }
+
+
+                }
+
+
             }
 
+            return filteredList
 
         }
-
-
+        return {
+            addRegNumber,
+            //numRegister,
+            //  numberPlates,
+            plateStorage,
+            filter,
+            checkExists,
+            testfilter,
+            //  objToString,
+            checkValid
         }
-
-        return filteredList
-
     }
-    return {
-        addRegNumber,
-        //numRegister,
-        //  numberPlates,
-        plateStorage,
-        filter,
-        checkExists
-        //  objToString,
-
-    }
-}
