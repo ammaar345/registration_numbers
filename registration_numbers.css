@@ -1,5 +1,5 @@
 body {
-    font-size: 130%;
+    font-size: 150%;
     background: rgb(37,181,164);
     background: linear-gradient(90deg, rgba(37,181,164,1) 6%, rgba(2,0,36,1) 61%, rgba(0,212,255,1) 100%);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -16,7 +16,7 @@ h1{font-weight: 800;}
     padding-left: 6em;
 }
 
-.bottom{padding-bottom: 2.5em;}
+.bottom{padding-bottom: 1.5em;}
 input[type="button"] {
     font-weight: 200;
 }
@@ -54,11 +54,11 @@ select {
 .plateStyle {
      
     background-color: yellow;
-    width: fit-content;
+    width: 6em;
     font-weight: 800;
-    margin:1em;
+    margin:1.2em;
     border-radius: 0.3em;
-
+padding: 5px;
     border:1px outset black ;
   }
 li{list-style-type: none}
