@@ -34,12 +34,13 @@ function filtering() {
 function append() {
   
     var textVal = text.value;
-    if (!plateFunc.checkExists(textVal,plateFunc.plateStorage())){
+    if (plateFunc.checkExists(textVal,plateFunc.plateStorage())){
     var node = document.createElement("li");
     regNumList.appendChild(node);
     node.innerHTML = textVal;
     node.classList.add("plateStyle")
 }
+
 console.log(plateFunc.checkExists(textVal,plateFunc.plateStorage()))   
     //var textnode = document.createTextNode(textVal);
     plateFunc.addRegNumber(textVal);

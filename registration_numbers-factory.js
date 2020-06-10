@@ -9,7 +9,7 @@ function RegNumber(initialState) {
     }
     function checkExists(reg,regArray){
         if(/C[YLJ] \d{3,5}/.test(reg)||/C[YLJ] \d+-\d+/.test(reg)){
-            if(regArray.includes(reg)){
+            if(!regArray.includes(reg)){
             return true
         }
     }
