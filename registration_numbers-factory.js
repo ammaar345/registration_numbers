@@ -7,9 +7,17 @@ function RegNumber(initialState) {
         return regNumbers;
 
     }
+    function checkExists(reg,regArray){
+        if(/C[YLJ] \d{3,5}/.test(reg)||/C[YLJ] \d+-\d+/.test(reg)){
+            if(regArray.includes(reg)){
+            return true
+        }
+    }
+    else {return false}
+    }
     function addRegNumber(regNumber) {
         //still need to filter out if its invalid **  
-        if (regNumber !== "" && /C[YLJ] \d{3,5}/.test(regNumber)||/C[YLJ] \d+-\d+/) {
+        if (regNumber !== "" && /C[YLJ] \d{3,5}/.test(regNumber)||/C[YLJ] \d+-\d+/.test(regNumber)) {
 if(!regNumbers.includes(regNumber)){
 
             regNumbers.push(regNumber);
@@ -55,7 +63,8 @@ if(!regNumbers.includes(regNumber)){
         //numRegister,
         //  numberPlates,
         plateStorage,
-        filter
+        filter,
+        checkExists
         //  objToString,
 
     }
