@@ -12,6 +12,7 @@ const plateFunc = RegNumber(regNumbers);
 const button = document.querySelector(".btnAdd");
 const text = document.querySelector(".regNumber");
 const town = document.getElementById("townSelect");
+const msg = document.querySelector(".msg");
 //const storedRegState = localStorage["Plates"];
 const regNumList = document.querySelector(".regNumList");
 
@@ -27,21 +28,38 @@ function filtering() {
         regNumList.appendChild(node);
         node.innerHTML = currentReg;
         node.classList.add("plateStyle")
-            // 
+        // 
     }
 }
+function checkText() {
+    if (text.value === "") {
+     msg.innerHTML = "Please enter a registration number." 
+    }
+    else if (!plateFunc.checkValid(text.value)) {
+        msg.innerHTML = "The format of this registration number is incorrect."
+    }
 
-function append() {
-  
-    var textVal = text.value;
-    if (plateFunc.checkExists(textVal,plateFunc.plateStorage())){
-    var node = document.createElement("li");
-    regNumList.appendChild(node);
-    node.innerHTML = textVal;
-    node.classList.add("plateStyle")
+    else if (!plateFunc.checkExists(text.value, plateFunc.plateStorage())) {
+         msg.innerHTML = "This registration number is already taken." }
+    
+    else {msg.innerHTML="Entry successfully added."}
+
 }
+function append() {
+    checkText()
+    //msg.innerHTML=""
 
-console.log(plateFunc.checkExists(textVal,plateFunc.plateStorage()))   
+    var textVal = text.value;
+
+
+    if (plateFunc.checkExists(textVal, plateFunc.plateStorage())) {
+        var node = document.createElement("li");
+        regNumList.appendChild(node);
+        node.innerHTML = textVal;
+        node.classList.add("plateStyle")
+    }
+
+    console.log(plateFunc.checkExists(textVal, plateFunc.plateStorage()))
     //var textnode = document.createTextNode(textVal);
     plateFunc.addRegNumber(textVal);
     //var filtered = plateFunc.filter(townVal);
@@ -51,9 +69,10 @@ console.log(plateFunc.checkExists(textVal,plateFunc.plateStorage()))
     var storingPlates = plateFunc.plateStorage();
     var regPlates = JSON.stringify(storingPlates);
     localStorage['Plates'] = regPlates;
-    text.value=""
-
+    text.value = ""
+    setTimeout(function () { msg.innerHTML = "" }, 4000)
 }
+
 filtering()
 button.addEventListener("click", append)
-town.addEventListener("change",filtering)
+town.addEventListener("change", filtering)
