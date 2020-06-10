@@ -33,7 +33,8 @@ if(!regNumbers.includes(regNumber)){
         var filteredList = [];
         for (var i = 0; i < regNumbers.length; i++) {
             var currentReg = regNumbers[i]; //if no work make var = const
-            if (currentReg.startsWith(location)) {
+            if(town.value){
+          if  (currentReg.startsWith(location)) {
                 filteredList.push(currentReg);
             } else if (location === "all") {
 
@@ -41,7 +42,7 @@ if(!regNumbers.includes(regNumber)){
             }
 
 
-
+        }
 
 
         }
