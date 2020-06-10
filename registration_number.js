@@ -15,7 +15,7 @@ const town = document.getElementById("townSelect");
 //const storedRegState = localStorage["Plates"];
 const regNumList = document.querySelector(".regNumList");
 
-filtering()
+
 function filtering() {
     regNumList.innerHTML = "";
     var townVal = town.options[town.selectedIndex].value;
@@ -32,12 +32,16 @@ function filtering() {
 }
 
 function append() {
-    
-
+  
     var textVal = text.value;
-    
-
-    // var textnode = document.createTextNode(textVal);
+    if (!plateFunc.checkExists(textVal,plateFunc.plateStorage())){
+    var node = document.createElement("li");
+    regNumList.appendChild(node);
+    node.innerHTML = textVal;
+    node.classList.add("plateStyle")
+}
+console.log(plateFunc.checkExists(textVal,plateFunc.plateStorage()))   
+    //var textnode = document.createTextNode(textVal);
     plateFunc.addRegNumber(textVal);
     //var filtered = plateFunc.filter(townVal);
     //console.log(filtered);
@@ -46,9 +50,9 @@ function append() {
     var storingPlates = plateFunc.plateStorage();
     var regPlates = JSON.stringify(storingPlates);
     localStorage['Plates'] = regPlates;
-
+    text.value=""
 
 }
-
+filtering()
 button.addEventListener("click", append)
 town.addEventListener("change",filtering)
