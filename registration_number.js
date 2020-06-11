@@ -31,27 +31,37 @@ function filtering() {
         // 
     }
 }
-function checkText() {
-    if (text.value === "") {
-     msg.innerHTML = "Please enter a registration number." 
-    }
-    else if (!plateFunc.checkValid(text.value)) {
-        msg.innerHTML = "The format of this registration number is incorrect."
-    }
+// function checkText() {
+//     msg.classList.remove("failed");
+//     msg.classList.remove("success")
+//     if (text.value === "") {
+//         msg.classList.add("failed") 
+//         msg.innerHTML = "Please enter a registration number." 
+//     }
+//     else if (!plateFunc.checkValid(text.value)) {
+//         msg.classList.add("failed") 
+//         msg.innerHTML = "The format of this registration number is incorrect."
+//     }
 
-    else if (!plateFunc.checkExists(text.value, plateFunc.plateStorage())) {
-         msg.innerHTML = "This registration number is already taken." }
-    
-    else {msg.innerHTML="Entry successfully added."}
+//     else if (!plateFunc.checkExists(text.value, plateFunc.plateStorage())) {
+//         msg.classList.add("failed") 
+//         msg.innerHTML = "This registration number is already taken." }
 
-}
+//     else {msg.classList.add("success")
+//         msg.innerHTML="Entry successfully added."}
+
+// }
 function append() {
-    checkText()
+  
+    
     //msg.innerHTML=""
 
     var textVal = text.value;
-
-
+    
+    console.log(plateFunc.classAdd(textVal))
+    console.log(plateFunc.checkText(textVal))
+    msg.innerHTML= plateFunc.checkText(textVal);
+    msg.classList.add(plateFunc.classAdd(textVal))
     if (plateFunc.checkExists(textVal, plateFunc.plateStorage())) {
         var node = document.createElement("li");
         regNumList.appendChild(node);
@@ -70,7 +80,12 @@ function append() {
     var regPlates = JSON.stringify(storingPlates);
     localStorage['Plates'] = regPlates;
     text.value = ""
-    setTimeout(function () { msg.innerHTML = "" }, 4000)
+    setTimeout(function () { 
+        msg.innerHTML = "" ;
+        msg.classList.remove("success");
+        msg.classList.remove("failed");
+       
+    }, 4000)
 }
 
 filtering()
