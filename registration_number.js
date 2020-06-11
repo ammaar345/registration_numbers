@@ -26,18 +26,12 @@ function filtering() {
         regNumList.appendChild(node);
         node.innerHTML = currentReg;
         node.classList.add("plateStyle")
-        // 
+
     }
 }
 
 function append() {
-
-
-
     var textVal = (text.value).toUpperCase();
-
-    console.log(plateFunc.classAdd(textVal))
-    console.log(plateFunc.checkText(textVal))
     msg.innerHTML = plateFunc.checkText(textVal);
     msg.classList.add(plateFunc.classAdd(textVal))
     if (plateFunc.checkExists(textVal, plateFunc.plateStorage())) {
@@ -46,9 +40,6 @@ function append() {
         node.innerHTML = textVal;
         node.classList.add("plateStyle")
     }
-
-    console.log(plateFunc.checkExists(textVal, plateFunc.plateStorage()))
-    //var textnode = document.createTextNode(textVal);
     plateFunc.addRegNumber(textVal);
     var storingPlates = plateFunc.plateStorage();
     var regPlates = JSON.stringify(storingPlates);

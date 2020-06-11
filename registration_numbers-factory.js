@@ -2,7 +2,6 @@ function RegNumber(initialState) {
 
     var regNumbers = initialState ? initialState : [];
     function plateStorage() {
-        console.log(regNumbers)
         return regNumbers;
 
     }
