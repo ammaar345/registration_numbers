@@ -94,7 +94,7 @@ describe("Testing the message being returned based on the registration number en
 
 describe("Testing the class being returned based on the text box values.", function () {
 
-	it('should return "Please enter a registration number." .', function () {
+	it('should return "success" if the registration number is valid.', function () {
 		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232","CY 435","CJ 90012"];
 		const regPlate = RegNumber(arrayMain);
 		var plate="CJ 2314";
