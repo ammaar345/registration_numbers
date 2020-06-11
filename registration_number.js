@@ -34,7 +34,7 @@ function append() {
 
 
 
-    var textVal = text.value;
+    var textVal = (text.value).toUpperCase();
 
     console.log(plateFunc.classAdd(textVal))
     console.log(plateFunc.checkText(textVal))
