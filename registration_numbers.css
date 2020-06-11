@@ -1,5 +1,5 @@
 body {
-    font-size: 150%;
+    font-size: 130%;
     background: rgb(0,212,255);
     background: linear-gradient(90deg, rgba(0,212,255,1) 38%, rgba(9,121,116,1) 63%);
        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -13,7 +13,7 @@ body {
 h1{font-weight: 800;}
 
 .right {
-    padding-left: 6em;
+    padding-left: 2em;
 }
 
 .bottom{padding-bottom: 1.5em;}
@@ -29,9 +29,11 @@ input[type="button"] {
     float: right;
     background-color:cadetblue;
     border-radius: 5px;
-    padding: 4px;
-    font-size: 16px;
+    /* padding: 4px; */
+    font-size: 13px;
     width: 4.5em;
+    height: 1.8em;
+    text-align: center;
     
 }
 .btnAdd:hover, .btnAdd:focus {
@@ -40,7 +42,10 @@ input[type="button"] {
 }
 .btnAdd{
     cursor: pointer;
+    
+    text-align: start;
     }
+    .left{padding-right: 3em;}
 .flex {
     display: flex;
     zoom: 1;
@@ -51,27 +56,46 @@ input[type="button"] {
     
 }
 
+.higherbottom{padding-bottom: 0.5em;}
 
 select {
     color: black;
     background-color:wheat;
-   
+   width: 8em;
+   border-radius: 5px;
 }
-.regNumList{list-style-type: none;}
+.regNumber{width: 10em;
+height: 1.5em;
+}
+.regNumList{list-style-type: none;
+padding-right: 2em;}
 .success{color: green;
-font-weight: 100;}
-.failed{color: red;}
+font-weight: 100;
+border: wheat 1px outset;
+padding: 6px;
+text-align: center;
+width: fit-content;
+}
+.padding{padding: 1em;}
+
+.failed{color: red;
+    border: wheat 1px outset;
+    width: fit-content;
+    padding: 6px;
+text-align: center;
+   }
 .plateStyle {
      
     background-color: yellow;
-    width: 8em;
-    font-weight: 800;
-    margin:1.2em;
+    width: 7.5em;
+    font-weight: 900;
+    margin:1em;
     border-radius: 0.3em;
-padding: 8px;
-    border:1px outset black ;
+  padding: 4px;  
+    border:1px solid black ;
     text-align:  center ;
+    display: inline-block;
   }
   
-li{list-style-type: none}
+li {list-style-type: none}
 ul{list-style-type:none;}
