@@ -1,3 +1,4 @@
+
 describe("Testing adding registration function.", function () {
 
 	it("should return false if there is no space in between when adding a registration number.", function () {
@@ -27,27 +28,101 @@ describe("Testing adding registration function.", function () {
 });
 describe("Testing filter function based on location.", function () {
 	//
-	
+
 	it('should return ["CL 2152","CL 913","CL 932-122"] ', function () {
-		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232","CY 435"]
+		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232", "CY 435"]
 		const regPlate = RegNumber();
 		var location = "CL";
 		//var arrayFilter = ["CL 2152", "CL 913", "CL 932-122", "CJ 1232"];
-		assert.deepEqual(["CL 2152", "CL 913", "CL 932-122"], regPlate.testfilter(location,arrayMain));
+		assert.deepEqual(["CL 2152", "CL 913", "CL 932-122"], regPlate.testfilter(location, arrayMain));
 	});
 	it('should return ["CJ 8913","CJ 781","CJ 1232"]', function () {
-		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232","CY 435"]
+		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232", "CY 435"]
 		const regPlate = RegNumber();
 		var location = "CJ";
 		//var arrayFilter = ["CJ 8913", "CJ 781", "CL 2134"];
-		assert.deepEqual(["CJ 8913", "CJ 781",'CJ 1232'], regPlate.testfilter(location,arrayMain));
+		assert.deepEqual(["CJ 8913", "CJ 781", 'CJ 1232'], regPlate.testfilter(location, arrayMain));
 	});
 	it('should return ["CY 435"]', function () {
-		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232","CY 435"]
+		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232", "CY 435"]
 		const regPlate = RegNumber();
 		var location = "CY";
 		//var arrayFilter = ["CJ 123", "CY 435", "CL 1234"];
-		assert.deepEqual(["CY 435"], regPlate.testfilter(location,arrayMain));
+		assert.deepEqual(["CY 435"], regPlate.testfilter(location, arrayMain));
+	});
+
+});
+describe("Testing the message being returned based on the registration number entered.", function () {
+
+	it('should return "This registration number is already taken." .', function () {
+		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232", "CY 435", "CJ 90012"];
+		const regPlate = RegNumber(arrayMain);
+		var plate = "CJ 90012";
+		var msg = regPlate.checkText(plate)
+		assert.equal("This registration number is already taken.", msg);
+	});
+	it('should return "Entry has been successfully added." .', function () {
+		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232", "CY 435", "CJ 90012"];
+		const regPlate = RegNumber(arrayMain);
+		var plate = "CJ 5512";
+		var msg = regPlate.checkText(plate)
+
+		assert.deepEqual("Entry has been successfully added.", msg);
+	});
+	it('should return "The format of this registration number is incorrect." .', function () {
+		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232", "CY 435", "CJ 90012"];
+		const regPlate = RegNumber(arrayMain);
+		var plate = "CJ25512";
+		var msg = regPlate.checkText(plate)
+
+
+		assert.deepEqual("The format of this registration number is incorrect.", msg);
+	});
+	it('should return "Please enter a registration number." .', function () {
+		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232", "CY 435", "CJ 90012"];
+		const regPlate = RegNumber(arrayMain);
+		var plate = "";
+		var msg = regPlate.checkText(plate)
+
+
+		assert.deepEqual("Please enter a registration number.", msg);
+	});
+
+
+});
+
+
+describe("Testing the class being returned based on the text box values.", function () {
+
+	it('should return "Please enter a registration number." .', function () {
+		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232","CY 435","CJ 90012"];
+		const regPlate = RegNumber(arrayMain);
+		var plate="CJ 2314";
+		regPlate.checkText(plate)
+
+
+			assert.deepEqual("success",regPlate.classAddTest() );
+	});
+	it('should return "failed" if the registration number format is incorrect.', function () {
+		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232", "CY 435", "CJ 90012"];
+		const regPlate = RegNumber(arrayMain);
+		var plate = "CJ23145";
+		regPlate.checkText(plate)
+		assert.equal("failed", regPlate.classAddTest());
+	});
+	it('should return "failed" if the text box is empty.', function () {
+		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232", "CY 435", "CJ 90012"];
+		const regPlate = RegNumber(arrayMain);
+		var plate = "";
+		regPlate.checkText(plate)
+		assert.equal("failed", regPlate.classAddTest());
+	});
+	it('should return "failed" if the entered registration plate is a duplicate.', function () {
+		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232", "CY 435", "CJ 90012"];
+		const regPlate = RegNumber(arrayMain);
+		var plate = "CJ 8913";
+		regPlate.checkText(plate)
+		assert.equal("failed", regPlate.classAddTest());
 	});
 
 });
