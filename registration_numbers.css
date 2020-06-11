@@ -1,8 +1,8 @@
 body {
     font-size: 150%;
-    background: rgb(37,181,164);
-    background: linear-gradient(90deg, rgba(37,181,164,1) 6%, rgba(2,0,36,1) 61%, rgba(0,212,255,1) 100%);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: rgb(0,212,255);
+    background: linear-gradient(90deg, rgba(0,212,255,1) 38%, rgba(9,121,116,1) 63%);
+       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     /* padding-left: 5em;
     padding-right: 5em;
     padding-top: 2em; */
@@ -32,8 +32,15 @@ input[type="button"] {
     padding: 4px;
     font-size: 16px;
     width: 4.5em;
+    
 }
-
+.btnAdd:hover, .btnAdd:focus {
+    background-color: #2980B9;
+    
+}
+.btnAdd{
+    cursor: pointer;
+    }
 .flex {
     display: flex;
     zoom: 1;
@@ -51,6 +58,9 @@ select {
    
 }
 .regNumList{list-style-type: none;}
+.success{color: green;
+font-weight: 100;}
+.failed{color: red;}
 .plateStyle {
      
     background-color: yellow;
@@ -62,5 +72,6 @@ padding: 8px;
     border:1px outset black ;
     text-align:  center ;
   }
+  
 li{list-style-type: none}
 ul{list-style-type:none;}
