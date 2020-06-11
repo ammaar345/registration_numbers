@@ -1,7 +1,6 @@
 function RegNumber(initialState) {
 
     var regNumbers = initialState ? initialState : [];
-    var returnResult = ""
     function plateStorage() {
         console.log(regNumbers)
         return regNumbers;
@@ -33,7 +32,7 @@ function RegNumber(initialState) {
         }
     }
     function addRegNumber(regNumber) {
-        //still need to filter out if its invalid **  
+
         if (regNumber !== "" && /C[YLJ] \d{3,5}/.test(regNumber) || /C[YLJ] \d+-\d+/.test(regNumber)) {
             if (!regNumbers.includes(regNumber)) {
 
@@ -45,13 +44,6 @@ function RegNumber(initialState) {
 
     }
 
-    // if (!regNumbers.includes(regNumber) && regNumber !== "") {
-    //     if (regNumber.startsWith("CJ") && regNumber.length === 10 || regNumber.startsWith("CL") && regNumber.length === 10 || regNumber.startsWith("CY") && regNumber.length === 10) {
-
-
-    //         regNumbers.push(regNumber);
-    //     }
-    // }
 
     function filter(location) {
         // CL, CY or contains(obtained from dropdown menu)
@@ -78,21 +70,21 @@ function RegNumber(initialState) {
     function checkText(registerNum) {
         var msgReturned = ""
         if (registerNum === "") {
-            // msg.classList.add("failed") 
+
             msgReturned = "Please enter a registration number."
         }
         else if (!checkValid(registerNum)) {
-            //msg.classList.add("failed") 
+
             msgReturned = "The format of this registration number is incorrect."
         }
 
         else if (!checkExists(registerNum, plateStorage())) {
-            // msg.classList.add("failed") 
+
             msgReturned = "This registration number is already taken."
         }
 
         else if (checkExists(registerNum, plateStorage())) {
-            // msg.classList.add("success")
+
             msgReturned = "Entry has been successfully added."
         }
         return msgReturned
@@ -120,41 +112,15 @@ function RegNumber(initialState) {
 
 
     }
-    // function classAddTest() {
-      
-    //     if (checkText() === "Please enter a registration number.") {
-    //         returnResult = "failed"
-
-    //     }
-
-    //     else if (checkText() === "The format of this registration number is incorrect.") {
-    //         returnResult = "failed"
-
-    //     }
-    //     else if (checkText() === "This registration number is already taken.") {
-    //         returnResult = "failed"
-
-    //     }
-    //     else {returnResult="success"}
-    //     return returnResult
-
-
-    // }
-
-
-
     return {
         addRegNumber,
-        //numRegister,
-        //  numberPlates,
         plateStorage,
         filter,
         checkExists,
         testfilter,
-        //  objToString,
         checkValid,
         checkText,
         classAdd,
-        // classAddTest
+
     }
 }

@@ -1,4 +1,3 @@
-//
 var storedPlates = localStorage["Plates"]
 let regNumbers = [];
 var arrAll = [];
@@ -8,12 +7,11 @@ if (storedPlates) {
 
 }
 const plateFunc = RegNumber(regNumbers);
-//
+
 const button = document.querySelector(".btnAdd");
 const text = document.querySelector(".regNumber");
 const town = document.getElementById("townSelect");
 const msg = document.querySelector(".msg");
-//const storedRegState = localStorage["Plates"];
 const regNumList = document.querySelector(".regNumList");
 
 
@@ -22,7 +20,7 @@ function filtering() {
     var townVal = town.options[town.selectedIndex].value;
     //loop over a list of reg numbers
     regNumbers = plateFunc.filter(townVal);
-    for (var i = 0; i < regNumbers.length; i++) { //array from main to go in for loop
+    for (var i = 0; i < regNumbers.length; i++) {
         const currentReg = regNumbers[i];
         var node = document.createElement("li");
         regNumList.appendChild(node);
@@ -31,30 +29,10 @@ function filtering() {
         // 
     }
 }
-// function checkText() {
-//     msg.classList.remove("failed");
-//     msg.classList.remove("success")
-//     if (text.value === "") {
-//         msg.classList.add("failed") 
-//         msg.innerHTML = "Please enter a registration number." 
-//     }
-//     else if (!plateFunc.checkValid(text.value)) {
-//         msg.classList.add("failed") 
-//         msg.innerHTML = "The format of this registration number is incorrect."
-//     }
 
-//     else if (!plateFunc.checkExists(text.value, plateFunc.plateStorage())) {
-//         msg.classList.add("failed") 
-//         msg.innerHTML = "This registration number is already taken." }
-
-//     else {msg.classList.add("success")
-//         msg.innerHTML="Entry successfully added."}
-
-// }
 function append() {
 
 
-    //msg.innerHTML=""
 
     var textVal = text.value;
 
@@ -72,10 +50,6 @@ function append() {
     console.log(plateFunc.checkExists(textVal, plateFunc.plateStorage()))
     //var textnode = document.createTextNode(textVal);
     plateFunc.addRegNumber(textVal);
-    //var filtered = plateFunc.filter(townVal);
-    //console.log(filtered);
-    //filtering(townVal);
-    //storage section
     var storingPlates = plateFunc.plateStorage();
     var regPlates = JSON.stringify(storingPlates);
     localStorage['Plates'] = regPlates;
