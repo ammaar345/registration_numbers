@@ -1,7 +1,7 @@
 function RegNumber(initialState) {
 
     var regNumbers = initialState ? initialState : [];
-    
+    var returnResult = ""
     function plateStorage() {
         console.log(regNumbers)
         return regNumbers;
@@ -76,73 +76,70 @@ function RegNumber(initialState) {
 
     }
     function checkText(registerNum) {
-
+        var msgReturned = ""
         if (registerNum === "") {
             // msg.classList.add("failed") 
-            return "Please enter a registration number."
+            msgReturned = "Please enter a registration number."
         }
         else if (!checkValid(registerNum)) {
             //msg.classList.add("failed") 
-            return "The format of this registration number is incorrect."
+            msgReturned = "The format of this registration number is incorrect."
         }
 
         else if (!checkExists(registerNum, plateStorage())) {
             // msg.classList.add("failed") 
-            return "This registration number is already taken."
+            msgReturned = "This registration number is already taken."
         }
 
-        else if(checkExists(registerNum,plateStorage())) {
-           // msg.classList.add("success")
-            return "Entry has been successfully added."
+        else if (checkExists(registerNum, plateStorage())) {
+            // msg.classList.add("success")
+            msgReturned = "Entry has been successfully added."
         }
-
+        return msgReturned
     }
     function classAdd(registerN) {
-        var result=""
-        if (checkExists(registerN,plateStorage())){
-            result="success"
-                        }
-         else if (checkText() == "Please enter a registration number.") {
-             result="failed"
-           
+        var result = ""
+        if (checkExists(registerN, plateStorage())) {
+            result = "success"
         }
-        
-         else if (checkText() =="The format of this registration number is incorrect.") {
-            result="failed"
-            
+        else if (checkText() === "Please enter a registration number.") {
+            result = "failed"
+
         }
-        else  if (checkText()== "This registration number is already taken.") {
-            result="failed"
-        
+
+        else if (checkText() === "The format of this registration number is incorrect.") {
+            result = "failed"
+
         }
- 
-       return result
-       
-        
+        else if (checkText() === "This registration number is already taken.") {
+            result = "failed"
+
+        }
+
+        return result
+
+
     }
-    function classAddTest() {
-        var returnResult=""
-        if (checkText()==="Entry has been successfully added."){
-            returnResult="success"
-                        }
-         else if (checkText() === "Please enter a registration number.") {
-            returnResult="failed"
-           
-        }
-        
-         else if (checkText() ==="The format of this registration number is incorrect.") {
-            returnResult="failed"
-            
-        }
-        else  if (checkText()=== "This registration number is already taken.") {
-            returnResult="failed"
-        
-        }
- 
-       return returnResult
-       
-        
-    }
+    // function classAddTest() {
+      
+    //     if (checkText() === "Please enter a registration number.") {
+    //         returnResult = "failed"
+
+    //     }
+
+    //     else if (checkText() === "The format of this registration number is incorrect.") {
+    //         returnResult = "failed"
+
+    //     }
+    //     else if (checkText() === "This registration number is already taken.") {
+    //         returnResult = "failed"
+
+    //     }
+    //     else {returnResult="success"}
+    //     return returnResult
+
+
+    // }
 
 
 
@@ -158,6 +155,6 @@ function RegNumber(initialState) {
         checkValid,
         checkText,
         classAdd,
-        classAddTest
+        // classAddTest
     }
 }

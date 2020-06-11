@@ -92,37 +92,3 @@ describe("Testing the message being returned based on the registration number en
 });
 
 
-describe("Testing the class being returned based on the text box values.", function () {
-
-	it('should return "success" if the registration number is valid.', function () {
-		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232","CY 435","CJ 90012"];
-		const regPlate = RegNumber(arrayMain);
-		var plate="CJ 2314";
-		regPlate.checkText(plate)
-
-
-			assert.deepEqual("success",regPlate.classAddTest() );
-	});
-	it('should return "failed" if the registration number format is incorrect.', function () {
-		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232", "CY 435", "CJ 90012"];
-		const regPlate = RegNumber(arrayMain);
-		var plate = "CJ23145";
-		regPlate.checkText(plate)
-		assert.equal("failed", regPlate.classAddTest());
-	});
-	it('should return "failed" if the text box is empty.', function () {
-		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232", "CY 435", "CJ 90012"];
-		const regPlate = RegNumber(arrayMain);
-		var plate = "";
-		regPlate.checkText(plate)
-		assert.equal("failed", regPlate.classAddTest());
-	});
-	it('should return "failed" if the entered registration plate is a duplicate.', function () {
-		const arrayMain = ["CJ 8913", "CJ 781", "CL 2152", "CL 913", "CL 932-122", "CJ 1232", "CY 435", "CJ 90012"];
-		const regPlate = RegNumber(arrayMain);
-		var plate = "CJ 8913";
-		regPlate.checkText(plate)
-		assert.equal("failed", regPlate.classAddTest());
-	});
-
-});

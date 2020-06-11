@@ -52,15 +52,15 @@ function filtering() {
 
 // }
 function append() {
-  
-    
+
+
     //msg.innerHTML=""
 
     var textVal = text.value;
-    
+
     console.log(plateFunc.classAdd(textVal))
     console.log(plateFunc.checkText(textVal))
-    msg.innerHTML= plateFunc.checkText(textVal);
+    msg.innerHTML = plateFunc.checkText(textVal);
     msg.classList.add(plateFunc.classAdd(textVal))
     if (plateFunc.checkExists(textVal, plateFunc.plateStorage())) {
         var node = document.createElement("li");
@@ -80,11 +80,11 @@ function append() {
     var regPlates = JSON.stringify(storingPlates);
     localStorage['Plates'] = regPlates;
     text.value = ""
-    setTimeout(function () { 
-        msg.innerHTML = "" ;
+    setTimeout(function () {
+        msg.innerHTML = "";
         msg.classList.remove("success");
         msg.classList.remove("failed");
-       
+
     }, 4000)
 }
 
