@@ -12,26 +12,29 @@
 </head>
 
 <body>
+    <div class="container">
+    <div class="row ">
     <h1>Registration Number List</h1>
+</div>
+<div class="row  ">
+    
 
-    <div class="right-top bottom">
-
-        <label for="right-top">Registration Number:</label>
-        <input type="text" name="regNumber" class="regNumber">
-
-    </div>
-    <div class="top msg"> 
-        <p> </p>
-    </div>
-    <div class=" button flex more top row">
+        <label for="regNumber">Registration Number:</label>
+        <input type="text" name="regNumber" class="regNumber ">
+   
+    
+    
+    <div class=" button  right">
         
         <input type="button" value=" Add " class="btnAdd">
-
     </div>
-    
-    <div class="town-select top bottom">
+</div>
+    <div class=" msg row "> 
+        <p> </p>
+    </div>
+    <div class="town-select row ">
 
-        <label for="town-select">Select Town:</label>
+        <label for="town-select">Select Town: </label>
         <select id="townSelect">
       <option value="all">Show All</option>
       <option value="CY">Bellville</option>
@@ -40,9 +43,11 @@
      
     </select>
     </div>
-    <ul class="regNumList">
+    <div class="row">
+    <ul class=" regNumList   ">
     </ul>
-
+</div>
+</div>
 </body>
 <script src="registration_numbers-factory.js" charset="utf-8"></script>
 <script src="registration_number.js" charset="utf-8"></script>
