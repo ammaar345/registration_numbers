@@ -1,6 +1,5 @@
 var storedPlates = localStorage["Plates"]
 let regNumbers = [];
-var arrAll = [];
 if (storedPlates) {
     regNumbers = JSON.parse(storedPlates)
 
@@ -26,7 +25,6 @@ function filtering() {
         regNumList.appendChild(node);
         node.innerHTML = currentReg;
         node.classList.add("plateStyle")
-
     }
 }
 

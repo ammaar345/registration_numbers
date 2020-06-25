@@ -18,7 +18,7 @@ function RegNumber(initialState) {
         return filteredList;
     }
     function checkExists(reg, regArray) {
-        if (/C[YLJ] \d{3,5}/.test(reg) || /C[YLJ] \d+-\d+/.test(reg)) {
+        if (/C[YLJ] \d{3,5}$/.test(reg) || /C[YLJ] \d+-\d+$/.test(reg)) {
             if (!regArray.includes(reg)) {
                 return true
             }
@@ -26,13 +26,13 @@ function RegNumber(initialState) {
         else { return false }
     }
     function checkValid(regist) {
-        if (/C[YLJ] \d{3,5}/.test(regist) || /C[YLJ] \d+-\d+/.test(regist)) {
+        if (/C[YLJ] \d{3,5}$/.test(regist) || /C[YLJ] \d+-\d+$/.test(regist)) {
             return true
         }
     }
     function addRegNumber(regNumber) {
 
-        if (regNumber !== "" && /C[YLJ] \d{3,5}/.test(regNumber) || /C[YLJ] \d+-\d+/.test(regNumber)) {
+        if (regNumber !== "" && /C[YLJ] \d{3,5}$/.test(regNumber) || /C[YLJ] \d+-\d+$/.test(regNumber)) {
             if (!regNumbers.includes(regNumber)) {
 
                 regNumbers.push(regNumber);
