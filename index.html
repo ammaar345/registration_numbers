@@ -3,8 +3,15 @@
 
 <head>
 
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="registration_numbers.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/registration_numbers.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+   
+    <script type="text/x-template" class="regList">
+        {{#each registration}}
+        <li class="plateStyle">{{this}}</li>
+        {{/each}}
+            </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Numbers</title>
@@ -12,38 +19,51 @@
 </head>
 
 <body>
-    <div class="container">
-    <div class="row ">
-       <!-- <div class="clearfix"> -->
+  
+       
+  <div class="container">
+    <div class="tillBtn">
+    
+        <div class="row ">
+    
         <div class="col-6-sm">
-    <h1>Registration Number List</h1>
-</div>
-<div class="col-5">
-   <u> <h2>Example : CJ 2351 , CY 231-212 or CL 21490</h2></u>
+    
+            <h1>Registration Number List</h1>
 </div>
 
+
 </div>
-<div class=" msg row "> 
+
+<div class="row">
+    <u> <h2>Example : CJ 2351 , CY 231-212 or CL 21490</h2></u>
+ </div>
+
+<div class="row msg "> 
     <p> </p>
 </div>
+
 <div class="row min ">
     
 
-        <label for="regNumber">Registration Number:</label>
-        <input type="text" name="regNumber" class="regNumber ">
-   
+        <label for="regNumber  ">Registration Number:</label>
+       <div class=" right">
+        <input type="text" name="regNumber" class="regNumber  ">
+    </div>
     
     
     <div class=" button  right">
         
         <input type="button" value=" Add " class="btnAdd">
     </div>
+    
+</div>
 </div>
    
-    <div class="town-select row  ">
+    <div class="town-select row ">
 
-        <label for="town-select">Select Town: </label>
-        <select id="townSelect">
+        <label for="town-select" >Select Town: </label>
+        <div class="rightm">
+        <select id="townSelect"  >
       <option value="all">Show All</option>
       <option value="CY">Bellville</option>
       <option value="CJ">Paarl</option>
@@ -51,14 +71,86 @@
      
     </select>
 </div>
-    </div>
-    <div class="row">
+</div>
+   
+   
+    <div class="row ">
+    
     <ul class=" regNumList   ">
+    </ul>
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="container">
+    <div class="tillBtn">
+    
+        <div class="row ">
+      
+        <div class="col-6-sm">
+    
+            <h1>Registration Number List</h1>
+</div>
+
+<div class="row">
+    <u> <h2>Example : CJ 2351 , CY 231-212 or CL 21490</h3></u>
+ </div>
+
+</div>
+<div class=" msg-2 row "> 
+    <p> </p>
+</div>
+<div class="row min ">
+    
+
+    <label for="regNumber  ">Registration Number:</label>
+   <div class=" right">
+    <input type="text" name="regNumber" class="regNumber-2  ">
+</div>
+
+
+<div class=" button  right">
+    
+    <input type="button" value=" Add " class="btnAdd-2">
+</div>
+
+</div>
+
+<div class="town-select row ">
+
+    <label for="town-select" >Select Town: </label>
+    <div class="rightm">
+    <select id="townSelect-2"  >
+  <option value="all">Show All</option>
+  <option value="CY">Bellville</option>
+  <option value="CJ">Paarl</option>
+  <option value="CL">Stellenbosch</option>
+ 
+</select>
+</div>
+</div>
+
+  
+    <div class="row">
+    <ul class=" registrationsList  ">
     </ul>
     <!-- </div> -->
 </div>
+
+</div>
+
+<!-- BREAAADDD -->
+<script src="js/template.js"></script>
+<script src="js/registration_numbers-factory.js" charset="utf-8"></script>
+<script src="js/registration_number.js" charset="utf-8"></script>
+<script src="js/registration_number-dom.js"></script>
 </body>
-<script src="registration_numbers-factory.js" charset="utf-8"></script>
-<script src="registration_number.js" charset="utf-8"></script>
+
+
 
 </html>
