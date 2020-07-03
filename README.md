@@ -1,1 +1,1 @@
-# registration-with-handlebars
+# applying handlebars to registration exercise.
