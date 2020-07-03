@@ -49,7 +49,7 @@ function append() {
         msg2.classList.remove("failed");
 
     }, 4000)
-    alert("bread")
+
 }
 
 filtering()
