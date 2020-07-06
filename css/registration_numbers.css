@@ -75,17 +75,13 @@ select {
    width: 8em;
    border-radius: 5px;
 }
-.regNumber{width: 10em;
+.regNumber,.regNumber-2{width: 10em;
 height: 1.7em;
 
 
  } 
  
- .regNumber-2{width: 10em;
-    height: 1.7em;
-    padding-top: 1em;
-    
-     } 
+ 
 /* .regNumList{list-style-type: none;
 padding-right: 2em;} */
 .success{color: green;
