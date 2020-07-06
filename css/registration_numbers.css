@@ -27,35 +27,35 @@ input[type="button"] {
     padding-left: 12em;
     padding-top: 0.5em;
 }
-.btnAdd {
+/* .btnAdd {
      float: right; 
     background-color:lightcoral;
     border-radius: 3px;
 color: white;
     font-size: 13px;
-    /* width:6em; */
+ width:6em;
     height: 2em;
     cursor: pointer;
     
     text-align: start;
     
     
-}
-.btnAdd:hover:focus {
+} /*
+/* .btnAdd:hover:focus {
     background-color: #2980B9;
   
 }
-.btnAdd-2:hover:focus{background-color:lightcoral ;}
+.btnAdd-2:hover:focus{background-color:lightcoral ;} */
 .bread{display: flex;}
 /* .btnAdd{
    
     } */
-    .btnAdd-2{
+    /* .btnAdd-2{
         cursor: initial;
         
         text-align: start;
         color: black;
-        }
+        } */
     .left{padding-right: 3em;}
 .flex {
     display: flex;
