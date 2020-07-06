@@ -10,7 +10,7 @@
     border:mediumaquamarine solid 2px;
 }  */
 /* .float{float: inherit;} */
-
+body{text-align: center;}
  h1{font-weight: 800;}
 
 .right {
@@ -29,28 +29,29 @@ input[type="button"] {
 }
 .btnAdd {
      float: right; 
-    background-color:goldenrod;
-    border-radius: 5px;
+    background-color:lightcoral;
+    border-radius: 3px;
 color: white;
     font-size: 13px;
-    width: 6.3em;
-    height: 2.3em;
-    
-    
-}
-.btnAdd:hover, .btnAdd:focus {
-    background-color: #2980B9;
-  
-}
-.bread{display: flex;}
-.btnAdd{
+    /* width:6em; */
+    height: 2em;
     cursor: pointer;
     
     text-align: start;
-    color: black;
-    }
+    
+    
+}
+.btnAdd:hover:focus {
+    background-color: #2980B9;
+  
+}
+.btnAdd-2:hover:focus{background-color:lightcoral ;}
+.bread{display: flex;}
+/* .btnAdd{
+   
+    } */
     .btnAdd-2{
-        cursor: pointer;
+        cursor: initial;
         
         text-align: start;
         color: black;
@@ -79,25 +80,31 @@ height: 1.7em;
 
 
  } 
-.regNumList{list-style-type: none;
-padding-right: 2em;}
+ 
+ .regNumber-2{width: 10em;
+    height: 1.7em;
+    padding-top: 1em;
+    
+     } 
+/* .regNumList{list-style-type: none;
+padding-right: 2em;} */
 .success{color: green;
     font-size: initial;
     padding-bottom: 3px;
 font-weight: 100;
-padding: 1px;
+
 text-align: center;
 width: fit-content;
 height: 1.7px;
-text-decoration:underline green;
+padding: 1em;
 }
 .failed{color: red;
- padding-bottom: 3px;
+    padding: 1em;
     font-size: large;
     width: fit-content;
-text-align: center;
+text-align: start;
 height: 1.7px;
-text-decoration:underline red;
+
    }
    .padding{padding: 1em;}
 .plateStyle {

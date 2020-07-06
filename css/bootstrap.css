@@ -549,10 +549,10 @@ pre code {
   margin-left: auto;
   text-align: center;
 
-   
+ /*  
   width: 600px;
   margin: 30px;
-  display: inline-block;
+  display: inline-block;*/
 }
 
 @media (min-width: 576px) {
